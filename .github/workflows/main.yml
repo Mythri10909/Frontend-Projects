@@ -1,0 +1,24 @@
+name: CI Pipeline for Mythri Web App
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Setup Node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+
+    - name: Install Dependencies
+      run: echo "No dependencies to install - static HTML"
+
+    - name: Build Success
+      run: echo "✅ Build Successful!"
